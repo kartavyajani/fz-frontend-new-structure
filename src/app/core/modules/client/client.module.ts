@@ -7,6 +7,7 @@ import { LocationlistComponent } from './locationlist/locationlist.component';
 import { PlantequipmentlistComponent } from './plantequipmentlist/plantequipmentlist.component';
 import { TankstorageComponent } from './tankstorage/tankstorage.component';
 import { AngularSlickgridModule } from 'angular-slickgrid';
+import { ClientdashboardComponent } from './clientdashboard/clientdashboard.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AngularSlickgridModule } from 'angular-slickgrid';
     CurrentlistComponent,
     LocationlistComponent,
     PlantequipmentlistComponent,
-    TankstorageComponent
+    TankstorageComponent,
+    ClientdashboardComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,9 @@
+<p>Vehicles</p>
+<div class="row">
+  <div class="col-md-3">
+    <div class="square-image-container">
+      <img [src]="itemImageUrl" (error)="displayUniqueLetters()"/>
+      <div *ngIf="showUniqueLetters" class="unique-letters">{{ itemUniqueLetters }}</div>
+    </div>
+  </div>
+</div>
