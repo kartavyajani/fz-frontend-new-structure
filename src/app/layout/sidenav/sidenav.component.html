@@ -1,0 +1,100 @@
+<div class="sidenav my-5" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
+  <div class="logo-container fixed-bottom"style="bottom: 10px; ">
+      <button class="logo mt-1"  (click)="toggleCollapse()" *ngIf="!collapsed">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="mb-1"
+        >
+          <path
+            d="M3,4A1,1,0,0,0,2,5V19a1,1,0,0,0,2,0V5A1,1,0,0,0,3,4Zm18.92,7.62a1,1,0,0,0-.21-.33l-4-4a1,1,0,1,0-1.42,1.42L18.59,11H7a1,1,0,0,0,0,2H18.59l-2.3,2.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l4-4a1,1,0,0,0,.21-.33A1,1,0,0,0,21.92,11.62Z"
+          ></path>
+        </svg>
+      </button>
+      <!-- <div class="logo-text" @fadeInOut *ngIf="collapsed">FuelZilla</div> -->
+      <button
+        class="mt-1"
+        style="height: 3rem; margin-top: 1rem; width: 15%; margin-right: 5px;bottom: 5px ;"
+        *ngIf="collapsed"
+        (click)="closeSidenav()"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="mb-1"
+        >
+          <path
+            d="M21,11H9.41l2.3-2.29a1,1,0,1,0-1.42-1.42l-4,4a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l4,4a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L9.41,13H21a1,1,0,0,0,0-2ZM3,3A1,1,0,0,0,2,4V20a1,1,0,0,0,2,0V4A1,1,0,0,0,3,3Z"
+          ></path>
+        </svg>
+        <span class="ms-2">Collapsed View</span>
+      </button>
+    </div>
+  <div class="scrollwrap scrollwrap_delayed">
+      <ul class="sidenav-nav">
+          <li class="sidenav-nav-item" *ngFor="let data of navData">
+              <a class="sidenav-nav-link" (click)="handleClick(data)"
+                  *ngIf="data.items && data.items.length > 0"
+                  [ngClass]="getActiveClass(data)"
+                  
+              >
+              
+                  <i class="sidenav-link-icon" [class]="data.icon"
+                  [matMenuTriggerFor]="menu.childMenu"
+                  
+                 
+                  > <app-mat-menu #menu [items]="data.items"></app-mat-menu></i>
+                  <!-- <span *ngIf="data.items &&  data.items.length > 0">
+                      <button mat-raised-button color="primary" [matMenuTriggerFor]="menu.childMenu">
+                        aaa{{data.label}}
+                        <mat-icon>expand_more</mat-icon>
+                      </button>
+                      <app-mat-menu #menu [items]="data.items"></app-mat-menu>
+                    </span> -->
+
+
+
+                  <!-- <app-mat-menu #menu [items]="data.items" (mouseenter)="expandItem(data)" (mouseleave)="collapseItem(data)"></app-mat-menu> -->
+                  <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                     
+                      {{data.label}}
+                  </span>
+                  <i *ngIf="data.items && collapsed" class="menu-collapse-icon"
+                      [ngClass]="!data.expanded ? 'fal fa-angle-right' : 'fal fa-angle-down'"
+                  ></i>
+              </a>
+              
+  
+              <a class="sidenav-nav-link" 
+                  *ngIf="!data.items || (data.items && data.items.length === 0)"
+                  [routerLink]="[data.routeLink]" 
+                  routerLinkActive="active"
+                  [routerLinkActiveOptions]="{exact: true}"
+                  (click)="shrinkItems(data)"
+              
+                  > 
+                  <i class="sidenav-link-icon" [class]="data.icon"></i>
+                  <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+                  
+                      {{data.label}}
+                  </span>
+              </a>
+              <div *ngIf="collapsed && data.items && data.items.length > 0">
+                  <app-sublevel-menu
+                      [data]="data"
+                      [collapsed]="collapsed"
+                      [multiple]="multiple"
+                      [expanded]="data.expanded"
+                  ></app-sublevel-menu>
+              </div>
+          </li>
+      </ul>
+  </div>
+  
+</div>

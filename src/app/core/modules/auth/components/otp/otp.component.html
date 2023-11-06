@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="otp-container">
+    <p>Please Enter the OTP that is sent to your registered mobile number</p>
+    <ngx-otp-input [config]="otpInputConfig" (otpChange)="handeOtpChange($event)" (fill)="handleFillEvent($event)">
+    </ngx-otp-input>
+    <button class="btn-submit" (click)="submitOtp()">Submit OTP</button>
+  </div>
+</div>
