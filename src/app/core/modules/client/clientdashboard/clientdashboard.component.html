@@ -1,9 +1,75 @@
 <p>Vehicles</p>
 <div class="row">
-  <div class="col-md-3">
-    <div class="square-image-container">
-      <img [src]="itemImageUrl" (error)="displayUniqueLetters()"/>
-      <div *ngIf="showUniqueLetters" class="unique-letters">{{ itemUniqueLetters }}</div>
+  <div class="col-md-5">
+    <div class="row">
+      <div class="col-md-3 col-lg-3">
+        <div class="square-image-container">
+          <img [src]="itemImageUrl" (error)="displayUniqueLetters()" />
+          <div *ngIf="showUniqueLetters" class="unique-letters">
+            {{ itemUniqueLetters }}
+          </div>
+        </div>
+      </div>
+       <div class="col-md-8 col-lg-8">
+        <p>SRV</p>
+      
+       <p>SUV 2007 Nissan Trading name| Truck name </p>
+       <div class="active-radio">
+        <input
+          type="radio"
+          id="activeRadio"
+          [checked]="isActive"
+          [ngClass]="{ 'active': isActive }"
+          [disabled]="!isActive"
+        />
+        <label for="activeRadio">Active</label>
+      </div>
+
+      </div>
+    
     </div>
   </div>
+  <div class="col-md-1"></div>
+</div>
+<div class="row">
+ 
+
+  <div class="col-md-12 col-lg-12">
+  
+  <mat-tab-group>
+  
+    <!-- Overview Tab -->
+    <mat-tab label="Overview ">
+      <div style="margin-top: 10px;">
+        <mat-grid-list cols="2" rowHeight="2:1">
+          <mat-grid-tile>1</mat-grid-tile>
+          <mat-grid-tile>2</mat-grid-tile>
+          <mat-grid-tile>3</mat-grid-tile>
+          <mat-grid-tile>4</mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <!-- Content for the Overview tab goes here -->
+    </mat-tab>
+
+    <!-- Location Tab -->
+    <mat-tab label="Location">
+      <!-- Content for the Location tab goes here -->
+    </mat-tab>
+
+    <!-- Progress Tab -->
+    <mat-tab label="Progress">
+      <!-- Content for the Progress tab goes here -->
+    </mat-tab>
+
+    <!-- Compliance Tab -->
+    <mat-tab label="Compliance">
+      <!-- Content for the Compliance tab goes here -->
+    </mat-tab>
+
+    <!-- Order Tab -->
+    <mat-tab label="Order">
+      <!-- Content for the Order tab goes here -->
+    </mat-tab>
+  </mat-tab-group>
+</div>
 </div>

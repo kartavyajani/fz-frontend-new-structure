@@ -23,7 +23,7 @@ export class CurrentlistComponent implements OnInit {
     // this.excelExportService = new ExcelExportService();
   }
   openClientDashboard(args: OnEventArgs) {
-    this.router.navigate(['/clientmanagment/currentlist/clientdashboard']);
+    this.router.navigate(['/clientmanagment/clientdashboard']);
   }
 
   ngOnInit(): void {

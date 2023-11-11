@@ -14,6 +14,7 @@ export class ClientdashboardComponent implements OnInit {
   itemImageUrl: string = 'your-image-url.jpg'; // Replace with your image URL
   showUniqueLetters: boolean = false;
   itemUniqueLetters: string = '';
+  isActive: boolean = true;
 
   displayUniqueLetters() {
     // Image failed to load, display unique 3 letters
@@ -23,5 +24,6 @@ export class ClientdashboardComponent implements OnInit {
     const itemName: string = 'Your Item Name';
     this.itemUniqueLetters = itemName.slice(0, 3).toUpperCase();
   }
+  
 
 }

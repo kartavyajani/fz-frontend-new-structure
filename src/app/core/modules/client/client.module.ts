@@ -8,6 +8,9 @@ import { PlantequipmentlistComponent } from './plantequipmentlist/plantequipment
 import { TankstorageComponent } from './tankstorage/tankstorage.component';
 import { AngularSlickgridModule } from 'angular-slickgrid';
 import { ClientdashboardComponent } from './clientdashboard/clientdashboard.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -21,6 +24,9 @@ import { ClientdashboardComponent } from './clientdashboard/clientdashboard.comp
   imports: [
     CommonModule,
     ClientRoutingModule,
+    MatTabsModule,
+    MatIconModule,
+    MatGridListModule,
     AngularSlickgridModule.forRoot() 
   ]
 })
