@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
 
 
+
 @NgModule({
   declarations: [
     CurrentlistComponent,
@@ -27,6 +28,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatTabsModule,
     MatIconModule,
     MatGridListModule,
+   
     AngularSlickgridModule.forRoot() 
   ]
 })
