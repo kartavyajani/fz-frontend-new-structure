@@ -11,6 +11,7 @@ import { ClientdashboardComponent } from './clientdashboard/clientdashboard.comp
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -28,6 +29,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatTabsModule,
     MatIconModule,
     MatGridListModule,
+    MatCardModule,
    
     AngularSlickgridModule.forRoot() 
   ]

@@ -35,15 +35,67 @@
     <mat-tab-group>
       <!-- Overview Tab -->
       <mat-tab label="Overview ">
-        <div style="margin-top: 10px">
-          <mat-grid-list cols="2" rowHeight="2:1">
-            <mat-grid-tile>
-              <canvas id="piechart"></canvas>
-            </mat-grid-tile>
-            <mat-grid-tile>2</mat-grid-tile>
-            <mat-grid-tile>3</mat-grid-tile>
-            <mat-grid-tile>4</mat-grid-tile>
-          </mat-grid-list>
+        <div class="overview" style="margin-top: 10px">
+          <div class="row">
+            <div class="col-md-6">
+              <mat-card class="example-card">
+                <mat-card-content>
+              
+                  <canvas id="piechart" ></canvas>
+          
+                
+              </mat-card-content>
+              <mat-card-actions>
+                <div class="row">
+                  <div class="col-md-4 ">
+                    Fuel Cost
+                    <p><b>$500</b></p>
+                  </div>
+                  <div class="col-md-4">
+                    service Cost
+                    <p><b>$500</b></p>
+                  </div>
+                  <div class="col-md-4">
+                    Other Cost
+                    <p><b>$500</b></p>
+                  </div>
+
+                </div>
+                  
+                
+              </mat-card-actions>
+                
+              </mat-card>
+            </div>
+            <div class="col-md-6">
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <div class="row">
+                    <div class="col-md-8">
+
+                 
+                    <b>Open Issue</b>
+                  </div>
+                  <div class="col-md-2">
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                  
+                  </div>
+                  
+                </mat-card-header>
+                <mat-card-content>
+              
+                
+          
+                
+              </mat-card-content>
+                
+              </mat-card>
+            </div>
+
+          </div>
+          
         </div>
         <!-- Content for the Overview tab goes here -->
       </mat-tab>
